@@ -14,7 +14,8 @@
       "launchBrowser": true,
       "launchUrl": "weatherforecast",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "EVENT_BUS_HOST": "amqp://guest:guest@localhost:5672"
       }
     },
     "Users.API": {

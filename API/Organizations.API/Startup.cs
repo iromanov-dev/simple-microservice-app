@@ -42,7 +42,9 @@ namespace Organizations.API
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-            services.AddDbContext<StecpointDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DbConnectionString")));
+            var connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING");
+
+            services.AddDbContext<StecpointDbContext>(options => options.UseSqlServer(connectionString));
 
             Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
 
@@ -59,13 +61,20 @@ namespace Organizations.API
                 }
             );
 
-            Bus.Factory.CreateUsingRabbitMq(config =>
+            services.AddMassTransit(config =>
             {
-                config.ReceiveEndpoint("users-queue", e =>
+                config.AddConsumer<UserAddedSubscriber>();
+                config.UsingRabbitMq((ctx, cfg) =>
                 {
-                    e.Consumer<UserAddedSubscriber>();
+                    cfg.Host(Environment.GetEnvironmentVariable("EVENT_BUS_HOST"));
+
+                    cfg.ReceiveEndpoint("users-queue", c =>
+                    {
+                        c.ConfigureConsumer<UserAddedSubscriber>(ctx);
+                    });
                 });
             });
+            services.AddMassTransitHostedService();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -88,6 +97,11 @@ namespace Organizations.API
             });
 
             app.UseOpenApi().UseSwaggerUi3();
+
+            /*using (var scope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                scope.ServiceProvider.GetRequiredService<StecpointDbContext>().Database.Migrate();
+            }*/
         }
     }
 }

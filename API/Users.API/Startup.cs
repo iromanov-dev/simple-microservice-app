@@ -1,5 +1,5 @@
 using Core.Users.Commands.AddUser;
-using Core.Users.Events.Publish.UserAddedEvent;
+using Core.Users.Events.Messages;
 using FluentValidation.AspNetCore;
 using MassTransit;
 using MediatR;
@@ -50,9 +50,12 @@ namespace Users.API
             services.AddMassTransit(x => {
                 x.UsingRabbitMq((context, config) =>
                 {
+                    config.Host(Environment.GetEnvironmentVariable("EVENT_BUS_HOST"));
                     config.ConfigureEndpoints(context);
                 });
             });
+
+            services.AddMassTransitHostedService();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,4 +1,4 @@
-﻿using Core.Users.Events.Publish.UserAddedEvent;
+﻿using Core.Users.Events.Messages;
 using MassTransit;
 using MediatR;
 using Microsoft.Extensions.Logging;
@@ -22,6 +22,7 @@ namespace Core.Users.Commands.AddUser
         {
             logger.LogInformation("Получен запрос на создание нового пользователя.");
             var endpoint = await messageBus.GetSendEndpoint(new Uri("queue:users-queue"));
+
             await endpoint.Send(new UserAddedEvent() 
             {
                Name = request.Name,

@@ -1,0 +1,27 @@
+version: '3.4'
+
+services:
+    
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+
+  sqldata:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+  users.api:
+    image: ${DOCKER_REGISTRY-}usersapi
+    build:
+      context: .
+      dockerfile: API\Users.API\Dockerfile
+    depends_on:
+      - "sqldata"
+      - "rabbitmq"
+
+  organizations.api:
+    image: ${DOCKER_REGISTRY-}organizationsapi
+    build:
+      context: .
+      dockerfile: API\Organizations.API\Dockerfile
+    depends_on:
+      - "sqldata"
+      - "rabbitmq"
+
