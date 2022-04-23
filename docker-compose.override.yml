@@ -4,9 +4,10 @@ services:
   sqldata:
     environment:
       SA_PASSWORD: "qwertY12@3"
+      MSSQL_SA_PASSWORD: "qwertY12@3"
       ACCEPT_EULA: "Y"
     ports:
-      - "1433:1433"
+      - "5433:1433"
     volumes:
       - sql_data_volume:/var/opt/mssql
       

@@ -1,5 +1,4 @@
 using Core.Users.Commands.AddUser;
-using Core.Users.Events.Messages;
 using FluentValidation.AspNetCore;
 using MassTransit;
 using MediatR;

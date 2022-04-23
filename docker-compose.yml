@@ -27,7 +27,7 @@ services:
       context: .
       dockerfile: ./API/Organizations.API/Dockerfile
     environment:
-      DB_CONNECTION_STRING: Server=127.0.0.1,1433;Database=my_db;User=sa;Password=qwertY12@3;
+      DB_CONNECTION_STRING: Server=127.0.0.1,5434;Database=my_db;User=sa;Password=qwertY12@3;Trusted_Connection=True;MultipleActiveResultSets=true
       EVENT_BUS_HOST: "rabbitmq"
     ports:
       - 5001:80

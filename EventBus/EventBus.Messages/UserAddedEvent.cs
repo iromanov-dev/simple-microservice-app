@@ -1,4 +1,4 @@
-﻿namespace Core.Organizations.Events.Publish.UserAddedEvent
+﻿namespace EventBus.Messages
 {
     public class UserAddedEvent
     {

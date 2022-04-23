@@ -1,10 +1,10 @@
-﻿using Core.Users.Events.Messages;
-using MassTransit;
+﻿using MassTransit;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using EventBus.Messages;
 
 namespace Core.Users.Commands.AddUser
 {

@@ -1,5 +1,5 @@
 ﻿using Core.Organizations.Commands.AddUser;
-using Core.Organizations.Events.Publish.UserAddedEvent;
+using EventBus.Messages;
 using MassTransit;
 using MediatR;
 using Microsoft.Extensions.Logging;

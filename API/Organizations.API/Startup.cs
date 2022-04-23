@@ -21,7 +21,6 @@ using Core.Organizations.Queries.GetUsers;
 using Core.Organizations.Mappings;
 using FluentValidation.AspNetCore;
 using MassTransit;
-using Core.Organizations.Events.Publish.UserAddedEvent;
 using Core.Organizations.Events.Subscribers.UserAdded;
 
 namespace Organizations.API
@@ -98,10 +97,10 @@ namespace Organizations.API
 
             app.UseOpenApi().UseSwaggerUi3();
 
-            /*using (var scope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            using (var scope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
             {
                 scope.ServiceProvider.GetRequiredService<StecpointDbContext>().Database.Migrate();
-            }*/
+            }
         }
     }
 }
