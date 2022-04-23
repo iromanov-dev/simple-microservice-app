@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+	<Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
@@ -9,6 +10,11 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.2" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

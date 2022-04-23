@@ -17,7 +17,7 @@ namespace Data.Repository
 
         public IQueryable<TEntity> GetAll()
         {
-            return _db.Set<TEntity>();
+            return _db.Set<TEntity>().AsNoTracking();
         }
 
         public TEntity Get(long id)

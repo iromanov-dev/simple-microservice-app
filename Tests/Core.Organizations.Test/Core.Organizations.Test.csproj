@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\simple-microservice-app-main\Core\Core.Organizations\Core.Organizations.csproj" />
+    <ProjectReference Include="..\..\Core\Core.Organizations\Core.Organizations.csproj" />
   </ItemGroup>
 
 </Project>

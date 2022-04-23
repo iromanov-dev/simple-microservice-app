@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Data.Migrations
 {
@@ -11,8 +12,8 @@ namespace Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Name = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -24,12 +25,12 @@ namespace Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Surname = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Patronymic = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Phone = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Name = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
+                    Surname = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
+                    Patronymic = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
+                    Phone = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
+                    Email = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false),
                     OrganizationId = table.Column<long>(type: "bigint", nullable: true)
                 },
                 constraints: table =>
@@ -46,17 +47,12 @@ namespace Data.Migrations
             migrationBuilder.InsertData(
                 table: "Organizations",
                 columns: new[] { "Id", "Name" },
-                values: new object[] { 1L, "Организация 1" });
-
-            migrationBuilder.InsertData(
-                table: "Organizations",
-                columns: new[] { "Id", "Name" },
-                values: new object[] { 2L, "Организация 2" });
-
-            migrationBuilder.InsertData(
-                table: "Organizations",
-                columns: new[] { "Id", "Name" },
-                values: new object[] { 3L, "Организация 3" });
+                values: new object[,]
+                {
+                    { 1L, "Организация 1" },
+                    { 2L, "Организация 2" },
+                    { 3L, "Организация 3" }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Users_OrganizationId",

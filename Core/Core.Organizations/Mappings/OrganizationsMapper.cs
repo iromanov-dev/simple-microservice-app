@@ -13,6 +13,9 @@ namespace Core.Organizations.Mappings
                 .ForMember(x => x.OrganizationName, x => x.MapFrom(p => p.Organization.Name));
 
             CreateMap<UserDto, User>();
+
+            CreateMap<Organization, OrganizationDto>();
+            CreateMap<OrganizationDto, Organization>();
         }
     }
 }

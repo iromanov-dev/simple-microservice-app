@@ -24,24 +24,20 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{53F2F054-3792-49E4-BC84-8468309EE3EB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8D5783FE-2E76-4B5A-955B-F2EC631FB1E6}"
-	ProjectSection(SolutionItems) = preProject
-		.dockerignore = .dockerignore
-		docker-compose.all.yml = docker-compose.all.yml
-	EndProjectSection
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{7E6EBF2D-CA6C-461B-B9F6-8A7D06AC4CAA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{2A64E005-CD32-4344-ACB7-A85BE78E2A03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Tests", "Tests\Data.Tests\Data.Tests.csproj", "{44AE20C1-90F8-4AF6-8E68-380788AC15A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.Tests", "Tests\Data.Tests\Data.Tests.csproj", "{44AE20C1-90F8-4AF6-8E68-380788AC15A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Organizations.Test", "Tests\Core.Organizations.Test\Core.Organizations.Test.csproj", "{0BAF6AB7-164D-4299-8E71-ECFFCE4ED798}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Organizations.Test", "Tests\Core.Organizations.Test\Core.Organizations.Test.csproj", "{0BAF6AB7-164D-4299-8E71-ECFFCE4ED798}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Users.Tests", "Tests\Core.Users.Tests\Core.Users.Tests.csproj", "{9FCF75FA-F50E-458C-9F80-929BAD761A8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Users.Tests", "Tests\Core.Users.Tests\Core.Users.Tests.csproj", "{9FCF75FA-F50E-458C-9F80-929BAD761A8A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventsBus", "EventsBus", "{40E0157C-50ED-44F6-A9C5-5FF2A8E45B3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventsBus.Messages", "EventBus\EventBus.Messages\EventBus.Messages.csproj", "{47089FD9-806A-40E5-8D2C-3434D92167F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus.Messages", "EventBus\EventBus.Messages\EventBus.Messages.csproj", "{47089FD9-806A-40E5-8D2C-3434D92167F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

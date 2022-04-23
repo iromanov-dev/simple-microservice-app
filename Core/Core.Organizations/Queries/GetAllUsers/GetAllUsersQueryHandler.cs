@@ -10,26 +10,26 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Core.Organizations.Queries.GetUsers
+namespace Core.Organizations.Queries.GetAllUsers
 {
-    public class GetUsersQueryHandler : IRequestHandler<GetUsersQuery, UsersListDto>
+    public class GetAllUsersQueryHandler : IRequestHandler<GetAllUsersQuery, UsersListDto>
     {
         private readonly IGenericRepository<User> repository;
         private readonly IMapper mapper;
 
-        public GetUsersQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
+        public GetAllUsersQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             this.repository = unitOfWork.Repository<User>();
             this.mapper = mapper;
         }
 
-        public async Task<UsersListDto> Handle(GetUsersQuery request, CancellationToken ct = default)
+        public async Task<UsersListDto> Handle(GetAllUsersQuery request, CancellationToken ct = default)
         {
-            var users = await repository.GetAll().Where(x => x.OrganizationId == request.OrganizationId).Include(x => x.Organization).Skip((request.Page - 1) * request.RowsPerPage).Take(request.RowsPerPage).ToListAsync();
+            var users = await repository.GetAll().ToListAsync();
 
             return new UsersListDto()
             {
-                Users = mapper.Map<List<UserDto>>(users)            
+                Users = mapper.Map<List<UserDto>>(users)
             };
         }
     }

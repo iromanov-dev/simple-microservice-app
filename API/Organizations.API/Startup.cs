@@ -43,7 +43,7 @@ namespace Organizations.API
 
             var connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING");
 
-            services.AddDbContext<StecpointDbContext>(options => options.UseSqlServer(connectionString));
+            services.AddDbContext<StecpointDbContext>(options => options.UseNpgsql(connectionString));
 
             Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
 

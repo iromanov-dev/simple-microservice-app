@@ -5,7 +5,17 @@ services:
     image: rabbitmq:3-management-alpine
 
   sqldata:
-    image: mcr.microsoft.com/mssql/server:2019-latest
+    image: postgres:latest
+    restart: always
+    ports:
+      - "5432"
+    volumes:
+      - db_volume:/var/lib/postgresql/data
+      - ./dbscripts/seed.sql :/docker-entrypoint-initdb.d/seed.sql
+    environment:
+      POSTGRES_USER: "dbuser"
+      POSTGRES_PASSWORD: "dbpa@ssw0rd"
+      POSTGRES_DB: "stecpointdb"      
 
   users.api:
     image: usersapi
@@ -27,10 +37,13 @@ services:
       context: .
       dockerfile: ./API/Organizations.API/Dockerfile
     environment:
-      DB_CONNECTION_STRING: Server=127.0.0.1,5434;Database=my_db;User=sa;Password=qwertY12@3;Trusted_Connection=True;MultipleActiveResultSets=true
+      DB_CONNECTION_STRING: "host=sqldata;port=5432;database=stecpointdb;username=dbuser;password=dbpa@ssw0rd;"
       EVENT_BUS_HOST: "rabbitmq"
     ports:
       - 5001:80
     depends_on:
       - "sqldata"
       - "rabbitmq"
+volumes: 
+  db_volume:
+      
