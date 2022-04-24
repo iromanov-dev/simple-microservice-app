@@ -24,7 +24,7 @@ namespace Core.Organizations.Queries.GetAllUsers
 
         public async Task<UsersListDto> Handle(GetAllUsersQuery request, CancellationToken ct = default)
         {
-            var users = await repository.GetAll().ToListAsync();
+            var users = await repository.GetAll().Include(x => x.Organization).ToListAsync();
 
             return new UsersListDto()
             {
