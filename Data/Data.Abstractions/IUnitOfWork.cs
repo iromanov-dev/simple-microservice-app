@@ -1,9 +1,4 @@
-﻿using Data.Repository;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Data.UnitOfWork
+﻿namespace Data.Abstractions
 {
     public interface IUnitOfWork
     {

@@ -1,5 +1,6 @@
-﻿using Data.Context;
-using Data.UnitOfWork;
+﻿using Data.Abstractions;
+using Data.EF.Context;
+using Data.EF.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
 
 namespace Core.Organizations.Test

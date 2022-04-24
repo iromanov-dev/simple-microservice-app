@@ -1,8 +1,7 @@
 ﻿using AutoMapper;
 using Core.Organizations.DTO;
+using Data.Abstractions;
 using Data.Models;
-using Data.Repository;
-using Data.UnitOfWork;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;

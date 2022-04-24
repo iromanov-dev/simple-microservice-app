@@ -1,5 +1,5 @@
-﻿using Data.Models;
-using Data.UnitOfWork;
+﻿using Data.Abstractions;
+using Data.Models;
 using FluentValidation;
 using System.Linq;
 

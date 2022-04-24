@@ -1,6 +1,5 @@
-﻿using Data.Models;
-using Data.Repository;
-using Data.UnitOfWork;
+﻿using Data.Abstractions;
+using Data.Models;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using System.Threading;
@@ -12,6 +11,7 @@ namespace Core.Organizations.Commands.SetOrganization
     {
         private readonly ILogger logger;
         private readonly IGenericRepository<User> userRepository;
+
         public SetOrganizationCommandHandler(ILogger<SetOrganizationCommandHandler> logger, IUnitOfWork unitOfWork)
         {
             this.logger = logger;

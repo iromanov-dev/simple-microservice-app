@@ -1,4 +1,5 @@
 using Core.Users.Commands.AddUser;
+using EventBus;
 using MassTransit;
 using Microsoft.Extensions.Logging;
 using Moq;
@@ -18,7 +19,7 @@ namespace Core.Users.Tests
         {
             // Arrange
             var logger = new Mock<ILogger<AddUserCommandHandler>>();
-            var bus = new Mock<IBus>();
+            var bus = new Mock<IEventBus>();
 
             var command = new AddUserCommand()
             {

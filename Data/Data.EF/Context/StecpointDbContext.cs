@@ -1,7 +1,7 @@
 ﻿using Data.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Data.Context
+namespace Data.EF.Context
 {
     public class StecpointDbContext : DbContext
     {

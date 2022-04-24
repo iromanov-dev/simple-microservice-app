@@ -1,6 +1,5 @@
-﻿using Data.Models;
-using Data.Repository;
-using Data.UnitOfWork;
+﻿using Data.Abstractions;
+using Data.Models;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using System.Threading;

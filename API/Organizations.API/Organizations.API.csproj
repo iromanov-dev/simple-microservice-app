@@ -15,9 +15,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Data\Data.EF\Data.EF.csproj" />
     <ProjectReference Include="..\API\API.csproj" />
     <ProjectReference Include="..\..\Core\Core.Organizations\Core.Organizations.csproj" />
     <ProjectReference Include="..\..\Data\Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\launchSettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 

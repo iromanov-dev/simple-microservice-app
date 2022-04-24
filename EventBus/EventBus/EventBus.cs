@@ -15,7 +15,7 @@ namespace EventBus
             this.messageBus = messageBus;
         }
 
-        public async Task Publish(IEvent @event, string queueName)
+        public async Task Publish<T>(T @event, string queueName)
         {
             var endpoint = await messageBus.GetSendEndpoint(new Uri($"queue:{queueName}"));
 

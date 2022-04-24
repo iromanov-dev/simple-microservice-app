@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Data.Abstractions;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Data.Repository
+namespace Data.EF
 {
     public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : Entity
     {

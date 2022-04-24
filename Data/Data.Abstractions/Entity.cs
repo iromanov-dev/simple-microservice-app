@@ -1,4 +1,4 @@
-﻿namespace Data
+﻿namespace Data.Abstractions
 {
     public class Entity
     {

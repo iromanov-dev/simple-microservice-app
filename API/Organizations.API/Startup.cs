@@ -1,5 +1,3 @@
-using Data.Context;
-using Data.UnitOfWork;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +12,10 @@ using Core.Organizations.Mappings;
 using FluentValidation.AspNetCore;
 using MassTransit;
 using Core.Organizations.Events.Subscribers.UserAdded;
+using Data.Abstractions;
+using Data.EF.Context;
+using Data.EF.UnitOfWork;
+using EventBus;
 
 namespace Organizations.API
 {
@@ -59,12 +61,14 @@ namespace Organizations.API
                 {
                     cfg.Host(Environment.GetEnvironmentVariable("EVENT_BUS_HOST"));
 
-                    cfg.ReceiveEndpoint("users-queue", c =>
+                    cfg.ReceiveEndpoint(Queues.USERS_QUEUE, c =>
                     {
                         c.ConfigureConsumer<UserAddedSubscriber>(ctx);
                     });
                 });
             });
+
+            services.AddMassTransitHostedService();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

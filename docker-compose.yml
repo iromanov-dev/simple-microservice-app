@@ -26,7 +26,7 @@ services:
     ports:
       - 5000:80
     environment:
-      EVENT_BUS_HOST: "rabbitmq"
+      EVENT_BUS_HOST: rabbitmq
     depends_on:
       - "rabbitmq"
 
@@ -38,7 +38,7 @@ services:
       dockerfile: ./API/Organizations.API/Dockerfile
     environment:
       DB_CONNECTION_STRING: "host=sqldata;port=5432;database=stecpointdb;username=dbuser;password=dbpa@ssw0rd;"
-      EVENT_BUS_HOST: "rabbitmq"
+      EVENT_BUS_HOST: rabbitmq
     ports:
       - 5001:80
     depends_on:

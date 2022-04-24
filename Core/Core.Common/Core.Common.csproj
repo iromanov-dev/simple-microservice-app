@@ -13,4 +13,9 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\Data.Abstractions\Data.Abstractions.csproj" />
+    <ProjectReference Include="..\..\Data\Data.Models\Data.Models.csproj" />
+  </ItemGroup>
+
 </Project>

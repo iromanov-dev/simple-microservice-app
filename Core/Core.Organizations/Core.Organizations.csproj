@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Data\Data.Models\Data.Models.csproj" />
     <ProjectReference Include="..\..\EventBus\EventBus.Messages\EventBus.Messages.csproj" />
     <ProjectReference Include="..\Core.Common\Core.Common.csproj" />
     <ProjectReference Include="..\..\Data\Data.csproj" />

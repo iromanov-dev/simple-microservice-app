@@ -1,5 +1,5 @@
 ﻿using Core.Organizations.CustomValidators;
-using Data.UnitOfWork;
+using Data.Abstractions;
 using FluentValidation;
 
 namespace Core.Organizations.Queries.GetUsers

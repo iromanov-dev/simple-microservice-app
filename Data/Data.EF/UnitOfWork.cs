@@ -1,10 +1,10 @@
-﻿using Data.Context;
-using Data.Repository;
+﻿using Data.Abstractions;
+using Data.EF.Context;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Data.UnitOfWork
+namespace Data.EF.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork
     {

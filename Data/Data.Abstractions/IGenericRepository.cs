@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 
-namespace Data.Repository
+namespace Data.Abstractions
 {
     public interface IGenericRepository<TEntity> where TEntity : Entity
     {

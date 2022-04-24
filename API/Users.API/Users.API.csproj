@@ -15,8 +15,17 @@
 
   <ItemGroup>    
     <ProjectReference Include="..\..\Core\Core.Users\Core.Users.csproj" />    
+    <ProjectReference Include="..\..\Data\Data.EF\Data.EF.csproj" />    
     <ProjectReference Include="..\API\API.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\launchSettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 
 </Project>

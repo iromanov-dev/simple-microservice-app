@@ -1,6 +1,5 @@
 ﻿using Core.Organizations.CustomValidators;
-using Data.Models;
-using Data.UnitOfWork;
+using Data.Abstractions;
 using FluentValidation;
 using System;
 using System.Linq;

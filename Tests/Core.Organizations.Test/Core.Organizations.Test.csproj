@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Core\Core.Organizations\Core.Organizations.csproj" />
+    <ProjectReference Include="..\..\Data\Data.EF\Data.EF.csproj" />
   </ItemGroup>
 
 </Project>

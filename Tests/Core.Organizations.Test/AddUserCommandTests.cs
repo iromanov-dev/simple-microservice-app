@@ -1,6 +1,4 @@
 using Core.Organizations.Commands.AddUser;
-using Data.Context;
-using Data.UnitOfWork;
 using MediatR;
 using System;
 using Xunit;

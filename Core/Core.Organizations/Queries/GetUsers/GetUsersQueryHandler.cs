@@ -1,8 +1,7 @@
 ﻿using AutoMapper;
 using Core.Organizations.DTO;
 using Data.Models;
-using Data.Repository;
-using Data.UnitOfWork;
+using Data.Abstractions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
