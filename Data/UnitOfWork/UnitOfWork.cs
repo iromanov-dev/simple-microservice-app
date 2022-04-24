@@ -11,13 +11,10 @@ namespace Data.UnitOfWork
         private readonly StecpointDbContext _db;
 
         private readonly Dictionary<Type, object> _repositories = new Dictionary<Type, object>();
-        //private readonly TransactionScope _transactionScope;
-        //private bool _transactionCompleted;
 
         public UnitOfWork(StecpointDbContext db)
         {
             _db = db;
-            //_transactionScope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled, TransactionScopeOption.Required, new TransactionOptions{IsolationLevel = IsolationLevel.ReadCommitted});
         }
 
         public IGenericRepository<TEntity> Repository<TEntity>() where TEntity : Entity
@@ -29,25 +26,9 @@ namespace Data.UnitOfWork
             return repository;
         }
 
-        public void RollbackChanges()
-        {
-            //_CompleteTransaction(false);
-        }
-
         public void SaveChanges()
         {
             _db.SaveChanges();
-            // _CompleteTransaction();
         }
-
-        // private void _CompleteTransaction(bool commitChanges = true)
-        // {
-        // if(_transactionCompleted)
-        // throw new InvalidOperationException("Current transaction is already completed");
-        // if (commitChanges)
-        // _transactionScope.Complete();
-        // _transactionScope.Dispose();
-        // _transactionCompleted = true;
-        // }
     }
 }

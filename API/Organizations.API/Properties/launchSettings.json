@@ -12,7 +12,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "weatherforecast",
+      "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "DB_CONNECTION_STRING": "Server=(localdb)\\mssqllocaldb;Database=StecpointDbContext-7dc5b790-765f-4381-988c-5167405bb107;Trusted_Connection=True;MultipleActiveResultSets=true",
@@ -22,7 +22,7 @@
     "Organizations.API": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "weatherforecast",
+      "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "DB_CONNECTION_STRING": "Server=(localdb)\\mssqllocaldb;Database=StecpointDbContext-7dc5b790-765f-4381-988c-5167405bb107;Trusted_Connection=True;MultipleActiveResultSets=true"
@@ -32,7 +32,7 @@
     "Docker": {
       "commandName": "Docker",
       "launchBrowser": true,
-      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/weatherforecast",
+      "launchUrl": "https://{ServiceHost}:{ServicePort}/swagger",
       "publishAllPorts": true,
       "useSSL": true
     }

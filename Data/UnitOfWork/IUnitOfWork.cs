@@ -9,6 +9,5 @@ namespace Data.UnitOfWork
     {
         IGenericRepository<TEntity> Repository<TEntity>() where TEntity : Entity;
         void SaveChanges();
-        void RollbackChanges();
     }
 }

@@ -1,4 +1,5 @@
 using Core.Users.Commands.AddUser;
+using EventBus;
 using FluentValidation.AspNetCore;
 using MassTransit;
 using MediatR;
@@ -37,6 +38,8 @@ namespace Users.API
             services.AddMediatR(typeof(AddUserCommand).Assembly);
             services.AddMvc().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<AddUserValidator>());
 
+            services.AddScoped<IEventBus, EventBus.EventBus>();
+
             services.AddSwaggerDocument(config =>
                 config.PostProcess = document =>
                 {
@@ -53,8 +56,6 @@ namespace Users.API
                     config.ConfigureEndpoints(context);
                 });
             });
-
-            services.AddMassTransitHostedService();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
