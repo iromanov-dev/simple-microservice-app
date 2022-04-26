@@ -25,7 +25,7 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{2A64E005-CD32-4344-ACB7-A85BE78E2A03}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Organizations.Test", "Tests\Core.Organizations.Test\Core.Organizations.Test.csproj", "{0BAF6AB7-164D-4299-8E71-ECFFCE4ED798}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Organizations.Tests", "Tests\Core.Organizations.Tests\Core.Organizations.Tests.csproj", "{0BAF6AB7-164D-4299-8E71-ECFFCE4ED798}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Users.Tests", "Tests\Core.Users.Tests\Core.Users.Tests.csproj", "{9FCF75FA-F50E-458C-9F80-929BAD761A8A}"
 EndProject

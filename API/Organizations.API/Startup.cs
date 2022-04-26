@@ -61,7 +61,7 @@ namespace Organizations.API
                 {
                     cfg.Host(Environment.GetEnvironmentVariable("EVENT_BUS_HOST"));
 
-                    cfg.ReceiveEndpoint(Queues.USERS_QUEUE, c =>
+                    cfg.ReceiveEndpoint(Queues.USERS, c =>
                     {
                         c.ConfigureConsumer<UserAddedSubscriber>(ctx);
                     });

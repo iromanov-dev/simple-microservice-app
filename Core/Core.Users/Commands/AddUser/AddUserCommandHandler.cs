@@ -30,7 +30,7 @@ namespace Core.Users.Commands.AddUser
                 Patronymic = request.Patronymic,
                 Phone = request.Phone,
                 Email = request.Email
-            }, Queues.USERS_QUEUE);
+            }, Queues.USERS);
 
             logger.LogInformation("Сообщение о создании нового пользователя было успешно отправлено.");
 
